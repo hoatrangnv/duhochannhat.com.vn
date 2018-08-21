@@ -35,7 +35,7 @@ button {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1020px;
     margin: auto;
     width: 100%;
     padding: 0 0.5rem;
@@ -159,24 +159,27 @@ i.icon {
     #top-nav {
         margin-top: 1rem;
         font-weight: bold;
-        background-color: #ED008E;
-        background: linear-gradient(to right, #ED008E, #9C2B93);
+        background-color: #17b;
+        background: linear-gradient(to right, #17b, #28d);
+    }
+    #top-nav .menu > li > a {
+        font-size: 0.9em;
     }
     #top-nav .menu > li > a:hover {
         text-decoration: underline;
     }
     #top-nav .menu > li:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
     }
     #top-nav .menu > li.active > a {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
     }
     #top-nav .sub-menu {
         display: none;
         position: absolute;
         z-index: 10;
-        background-color: #ED008E;
-        background: linear-gradient(to bottom, #ED008E, #9C2B93);
+        background-color: #17b;
+        background: linear-gradient(to bottom, #17b, #28d);
         padding: 1rem 0;
         min-width: 100%;
     }
@@ -263,8 +266,8 @@ i.icon {
     #top-nav .menu {
         display: none;
         z-index: 100;
-        background-color: #ED008E;
-        background: linear-gradient(to bottom, #ED008E, #9C2B93););
+        background-color: #17b;
+        background: linear-gradient(to bottom, #17b, #28d););
         position: fixed;
         top: 0;
         bottom: 0;
@@ -399,8 +402,8 @@ i.icon {
 /*.nav-bar {
     z-index: 100;
     font-size: 1rem;
-    background-color: #ED008E;
-    background: linear-gradient(to right, #ED008E, #9C2B93);
+    background-color: #17b;
+    background: linear-gradient(to right, #17b, #28d);
 }
 .nav-bar .menu ul li {
     float: left;
@@ -520,7 +523,7 @@ i.icon {
 
 /** MAIN CONTENT */
 #main-content {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 #main-content > .left {
     width: calc(70% - 0.75rem);
@@ -535,7 +538,7 @@ i.icon {
 
 /* .top-stories */
 .top-stories {
-    text-align: justify;
+    /*text-align: justify;*/
 }
 .top-stories .hot {
     width: calc(60% - 0.75rem);
@@ -554,7 +557,7 @@ i.icon {
     width: 100%;
 }
 .top-stories a:hover .name {
-    color: #ED008E;
+    color: #17b;
 }
 
 .top-stories .hot a .name {
@@ -575,17 +578,17 @@ i.icon {
     border-top: 1px solid #eee;
 }
 .top-stories .warm ul li a .name {
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 0.95em;
+    font-weight: normal;
 }
 .top-stories .warm ul li a .image {
     display: block;
-    width: calc(30% - 0.25rem);
+    width: calc(28% - 0.28 * 0.6rem);
     float: left;
 }
 .top-stories .warm ul li a .image + .name {
     display: block;
-    width: calc(70% - 0.25rem);
+    width: calc(72% - 0.72 * 0.6rem);
     float: right;
 }
 
@@ -593,7 +596,7 @@ i.icon {
     margin-top: 1rem;
 }
 .top-stories .more ul li a .name {
-    font-size: 1.05em;
+    font-size: 1em;
     margin-top: 0.5rem;
     font-weight: normal;
 }
@@ -645,11 +648,11 @@ i.icon {
     transform: rotateZ(-30deg);
 }
 .stories-card .heading .title:before {
-    background-color: #ED008E;
-    background: linear-gradient(to right, #ED008E 90%, #9C2B93);
+    background-color: #17b;
+    /*background: linear-gradient(to right, #17b 90%, #28d);*/
 }
 .stories-card .heading .title:after {
-    border-right: 1px solid #9C2B93;
+    border-right: 1px solid #28d;
     background-color: transparent;
     margin-right: -3px;
 }
@@ -673,7 +676,7 @@ i.icon {
     color: #666;
 }
 .stories-card .heading .extra ul li > a:hover {
-    color: #ED008E;
+    color: #17b;
 }
 
 .stories-card .body {
@@ -690,7 +693,7 @@ i.icon {
 }
 
 .stories-card .body a:hover .name {
-    color: #ED008E;
+    color: #17b;
 }
 .stories-card .body .hot a .name {
     font-size: 1.15em;
@@ -742,7 +745,7 @@ i.icon {
     font-weight: bold;
 }
 .thumbnail-story-list .item a:hover .name {
-    color: #ED008E;
+    color: #17b;
 }
 .thumbnail-story-list .item a .info {
     margin-top: 0.3rem;
@@ -835,12 +838,12 @@ i.icon {
 
 /** .aside-featured-stories */
 .aside-featured-stories ul li a .name {
-    font-size: 1em;
+    font-size: 0.95em;
     margin-top: 0.5rem;
-    font-weight: normal;
+    font-weight: bold;
 }
 .aside-featured-stories ul li a:hover .name {
-    color: #ED008E;
+    color: #17b;
 }
 .aside-featured-stories ul li {
     list-style: none;
@@ -862,8 +865,8 @@ i.icon {
 }
 .aside-featured-stories .title,
 .aside-story-list .title {
-    background-color: #ED008E;
-    background: linear-gradient(to right, #ED008E, #9C2B93);
+    background-color: #17b;
+    /*background: linear-gradient(to right, #17b, #28d);*/
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -928,7 +931,7 @@ i.icon {
     margin-left: 0.15em;
 }
 .breadcrumb a:hover {
-    color: #ED008E;
+    color: #17b;
 }
 
 /** SECTION */
@@ -937,9 +940,9 @@ section .heading {
 section .heading .title {
     font-size: 1.2em;
     font-weight: bold;
-    color: #ED008E;
+    color: #17b;
     float: left;
-    border-left: 0.3rem solid #ED008E;
+    border-left: 0.3rem solid #17b;
     padding-left: 0.6rem;
     overflow: hidden;
     text-transform: uppercase;
@@ -993,12 +996,12 @@ footer ul li + li {
 }
 footer .com-name {
     text-transform: uppercase;
-    color: #ED008E;
+    color: #17b;
     font-weight: bold;
 }
 footer a:hover {
     text-decoration: underline;
-    color: #ED008E;
+    color: #17b;
 }
 
 /** IMAGE */
@@ -1216,7 +1219,7 @@ footer a:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 .slider-nav li.active span {
-    background-color: #ED008E;
+    background-color: #17b;
 }
 @media screen and (max-width: 640px) {
     .slider-nav li span:empty {
@@ -1283,103 +1286,6 @@ footer a:hover {
     #header .banner {
         margin-top: 0.5rem;
     }
-
-    /** NAV BAR */
-    /*#top-nav {
-        margin-top: 0.5rem;
-    }
-    .nav-bar .menu-title {
-        max-width: 450px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .nav-bar .menu li {
-        float: none;
-        width: 100%;
-    }
-    .nav-bar .menu > ul {
-        top: 2.5rem;
-        width: calc(100vw - 1rem);
-        max-height: calc(100vh - 4rem);
-        position: absolute;
-        overflow: auto;
-        z-index: 10;
-        background: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        display: none;
-    }
-    #bottom-nav .nav-bar .menu > ul {
-        top: auto;
-        bottom: 2.5rem;
-    }
-    .nav-bar .menu-toggle.active + ul {
-        display: block;
-    }
-    .nav-bar .menu ul li a {
-        padding: 0 1rem;
-        color: #333;
-        display: block;
-        width: 100%;
-    }
-    .nav-bar .menu ul li a,
-    .nav-bar .search-toggle,
-    .nav-bar .menu > .menu-toggle,
-    .nav-bar li .menu-toggle:after {
-        line-height: 2.5rem;
-        height: 2.5rem;
-        min-width: 2.5rem;
-    }
-    .nav-bar .menu ul li:hover > a,
-    .nav-bar .menu ul li.active > a {
-        background: none;
-        color: #16B0F4;
-    }
-    .nav-bar .menu li li ul {
-        left: 1rem;
-        width: calc(100% - 1rem);
-    }
-    .nav-bar .menu li li li a {
-        font-weight: normal;
-    }
-    .nav-bar .menu {
-        width: 100%;
-    }
-    .nav-bar .menu > .menu-toggle {
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #fff;
-        line-height: 0;
-    }
-    .nav-bar .menu > .menu-toggle > * {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
-    }
-    .nav-bar li .menu-toggle {
-        position: absolute;
-        right: 0;
-        z-index: 1;
-    }
-    .nav-bar li .menu-toggle:after {
-        content: "+";
-        display: block;
-        color: #000;
-        font-weight: normal;
-        font-size: 1.4em;
-    }
-    .nav-bar .menu li ul,
-    .nav-bar .menu li:hover ul {
-        position: relative;
-        display: none;
-    }
-    .nav-bar li .menu-toggle.active:after {
-        content: "-";
-    }
-    .nav-bar li .menu-toggle.active + a + ul {
-        display: block;
-    }*/
 
     /** MAIN CONTENT */
     #main-content > .left,
@@ -1516,8 +1422,8 @@ footer a:hover {
         overflow-y: hidden;
         white-space: nowrap;
         color: #fff;
-        background-color: #ED008E;
-        background: linear-gradient(to bottom right, #ED008E, #9C2B93);
+        background-color: #17b;
+        background: linear-gradient(to bottom right, #17b, #28d);
     }*/
     .nav-bar .menu .menu-toggle {
         display: none;
@@ -1541,4 +1447,75 @@ footer a:hover {
     .sm-only {
         display: none !important;
     }
+}
+
+/**
+ * CONTACT FORM
+ */
+.contact-form {
+    padding: 1rem;
+    background: rgba(18, 120, 188, 0.3);
+    max-width: 320px !important;
+    margin: auto;
+}
+.contact-form > :not(:first-child) {
+    margin-top: 1rem;
+}
+.contact-form + * {
+    margin-top: 1rem !important;
+}
+.contact-form .field-title {
+    font-weight: bold;
+    font-size: 1.15em;
+}
+.contact-form .field-title + * {
+    margin-top: 0.5rem;
+}
+.contact-form input {
+    display: block;
+    width: 100%;
+    height: 2rem !important;
+    border: 1px solid #4bd;
+    padding: 0 0.5rem;
+    border-radius: 4px;
+}
+.contact-form .radio-group label {
+    display: block;
+    width: calc(50% - 0.5rem);
+    float: left;
+}
+.contact-form .radio-group label:not(:first-child) {
+    margin-left: 1rem;
+}
+.contact-form .radio-group label input {
+    display: none;
+}
+.contact-form .radio-group label input + span {
+    display: block;
+    padding: 0.5rem;
+    background: #fff;
+    /*text-align: center;*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+.contact-form .radio-group label input:hover + span {
+    background: #eee;
+}
+.contact-form .radio-group label input:checked + span {
+    background: #17b;
+    color: #fff;
+}
+.contact-form .radio-group label input:checked + span:before {
+    content: "✔︎ ";
+}
+.contact-form .submit-button {
+    padding: 0.5rem;
+    background: #FF7E00;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    min-width: 100px;
+    border-radius: 4px;
 }

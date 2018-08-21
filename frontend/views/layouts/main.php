@@ -41,12 +41,11 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 <?php $this->beginBody() ?>
 <style>
     #header {
-        color: #A7243A;
+        color: #06a;
         font-size: 1.5em;
         font-weight: bold;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        font-style: italic;
     }
     #header a + * {
         margin-left: 1.5rem;
@@ -63,9 +62,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
     <div id="header">
         <div class="container">
-            <a>CATDaily</a>
-            <br class="sm-only">
-            <span>Culture - Art - Technology</span>
+            Du học Hàn Nhật
         </div>
     </div>
 
@@ -74,10 +71,11 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <?= $this->render('//layouts/searchToolbar') ?>
 
     <?php
-    if (in_array(Yii::$app->requestedRoute, ['site/index'])) {
+//    if (in_array(Yii::$app->requestedRoute, ['site/index'])) {
         /**
          * @var $headerBanner Banner
          */
+        /*
         $headerBanners = Banner::find()
             ->where(['active' => 1])
             ->andWhere(['position' => Banner::POSITION_HEADER])
@@ -119,7 +117,8 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
             </div>
             <?php
         }
-    }
+        */
+//    }
     ?>
 
     <div class="container clr" id="main-content">

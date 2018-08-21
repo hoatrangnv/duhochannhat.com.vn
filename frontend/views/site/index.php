@@ -37,17 +37,12 @@ use yii\helpers\Html;
             <div class="warm">
                 <ul>
                     <?php
-                    for ($i = 1; $i < 8 && $i < $top_count; $i++) {
+                    for ($i = 1; $i < 7 && $i < $top_count; $i++) {
                         ?>
                         <li class="clr">
                             <?php
                             echo $top_articles[$i]->viewAnchor(
-                                (
-                                    1 == $i
-                                        ? ('<div class="image"><span>' . $top_articles[$i]->avatarImg() . '</span></div>')
-                                        : ''
-                                )
-
+                                '<div class="image"><span>' . $top_articles[$i]->avatarImg() . '</span></div>'
                                 . '<h3 class="name">'
                                 . Html::encode($top_articles[$i]->name)
                                 . '</h3>'
@@ -253,6 +248,7 @@ use yii\helpers\Html;
     ?>
 </div>
 <div class="right">
+    <?= $this->render('//contact/_form') ?>
     <?= $this->render('//article/_asideFeaturedList') ?>
     <?= $this->render('//article/_asideCategoryBasedList') ?>
 </div>
