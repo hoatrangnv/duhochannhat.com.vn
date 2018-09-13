@@ -23,10 +23,12 @@ $seoInfo->registerMetaTags($this);
 $seoInfo->registerLinkTags($this);
 
 $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
+
+$hasPageHeadline = in_array(Yii::$app->requestedRoute, ['site/index', 'article/category']);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" class="<?= $hasPageHeadline ? 'has-page-headline' : '' ?>">
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <meta charset="<?= Yii::$app->charset ?>">
@@ -45,7 +47,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     </div>
 
     <?php
-    if (in_array(Yii::$app->requestedRoute, ['site/index', 'article/category'])) {
+    if ($hasPageHeadline) {
         ?>
         <div id="page-headline"">
             <div class="container clr">
@@ -58,7 +60,9 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
     <div id="header">
         <div class="container">
-            Du học Hàn Nhật
+            <a class="text-logo" href="<?= Url::home(true) ?>" title="<?= Yii::$app->name ?>">
+                Du học Hàn Nhật
+            </a>
         </div>
     </div>
 
