@@ -33,32 +33,28 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <script src="http://hammerjs.github.io/dist/hammer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>
+    <!--<script src="http://hammerjs.github.io/dist/hammer.min.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>-->
+    <?= $this->render('//layouts/js') ?>
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-<style>
-    #header {
-        color: #06a;
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    #header a + * {
-        margin-left: 1.5rem;
-    }
-    @media screen and (max-width: 640px) {
-        #header {
-            padding-left: calc(35px + 1.5rem);
-        }
-    }
-</style>
     <div id="menu-mobile-backdrop"
          onclick="document.querySelector('html').classList.remove('menu-active')">
     </div>
+
+    <?php
+    if (in_array(Yii::$app->requestedRoute, ['site/index', 'article/category'])) {
+        ?>
+        <div id="page-headline"">
+            <div class="container clr">
+                <h1 class="content"><?= $seoInfo->heading ?></h1>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
 
     <div id="header">
         <div class="container">
@@ -130,8 +126,6 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     </div>
 
     <?= $this->render('//layouts/footer') ?>
-
-    <?= $this->render('//layouts/js') ?>
 
     <?= $this->render('//layouts/fbSDK') ?>
     <?= $this->render('//layouts/googlePlatform') ?>

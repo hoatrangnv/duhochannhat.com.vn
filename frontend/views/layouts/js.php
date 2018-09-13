@@ -8,7 +8,7 @@ use yii\helpers\Url;
 ?>
 <script>
     // Init sliders
-    [].forEach.call(document.querySelectorAll(".slider"), initSlider);
+    // [].forEach.call(document.querySelectorAll(".slider"), initSlider);
 
     /**
      *
@@ -104,46 +104,65 @@ use yii\helpers\Url;
 <script>
     /**
      *
-     * @param {Node} msg_html
+     * @param {Node|string} content
+     * @param {object?} options
      */
-    function popup(msg_html) {
-        var msg = element(
-            "div",
-            msg_html,
-            {
-                style: style({
-                    background: "white",
-                    padding: msg_html instanceof HTMLElement ? "0" : "1rem",
-                    "border-radius": "4px",
-                    "line-height": "1.5em",
-                    "max-width": Math.min(1000, 0.9 * window.innerWidth) + "px",
-                    "max-height": 0.9 * window.innerHeight + "px"
-                })
-            }
-        );
+    function popup(content, options) {
+        options = options || {};
 
-        var closeBtn = element(
+        var html = document.querySelector('html');
+
+        var closeBtn = elm(
             "button",
-            "close",
             {
+                html: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" fill="#ccc" style="display: block">'
+                + '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>'
+                + '</svg>'
+            },
+            {
+                'class': 'popup-close-button',
                 type: "button",
                 style: style({
                     color: "white",
                     position: "absolute",
-                    top: 0,
-                    right: 0,
-                    padding: "0.5em",
+                    top: '5px',
+                    right: '5px',
                     border: "none",
-                    cursor: "pointer",
-                    "background-color": "rgba(0, 0, 0, 0.5)"
+                    boxShadow: "none",
+                    zIndex: 9999,
+                    display: "block",
+                    fontSize: "2rem"
+                }),
+                title: 'Đóng'
+            }
+        );
+
+        var image = content instanceof HTMLElement ? content : elm(
+            'div',
+            content,
+            {
+                style: style({
+                    padding: "30px"
                 })
             }
         );
 
-        var container = element(
+        var container = elm(
             "div",
-            [msg, closeBtn],
+            elm(
+                "div",
+                [image, closeBtn],
+                {
+                    'class': 'popup-overlay',
+                    style: style({
+                        display: "block"//,
+//                        marginTop: "10vh",
+//                        marginBottom: "10vh"
+                    })
+                }
+            ),
             {
+                'class': options.className ? 'popup ' + options.className : 'popup',
                 style: style({
                     position: "fixed",
                     top: 0,
@@ -151,47 +170,69 @@ use yii\helpers\Url;
                     bottom: 0,
                     right: 0,
                     display: "flex",
-                    "align-items": "center",
-                    "justify-content": "center",
-                    "z-index": 9999,
-                    "background-color": "rgba(0, 0, 0, 0.5)"
-                })
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    zIndex: 9999,
+                    backgroundColor: "rgba(0, 0, 0, 0.9)",
+                    overflowY: "auto",
+                    "-webkit-overflow-scrolling": "touch"
+                }),
+                open: function () {
+                    html && html.classList.add('has-popup');
+                    container.parentNode || document.body.appendChild(container);
+                },
+                close: function () {
+                    html && html.classList.remove('has-popup');
+                    container.parentNode && container.parentNode.removeChild(container);
+                }
             }
         );
 
         document.addEventListener("click", function (event) {
-            if (isContains(container, event.target)
-                && msg !== event.target
-                && !isContains(msg, event.target)
-                && container.parentNode
-            ) {
-                container.parentNode.removeChild(container);
-            }
+            container.contains(event.target)
+            && image !== event.target
+            && !image.contains(event.target)
+            && container.close();
         });
 
-        closeBtn.addEventListener("click", function () {
-            if (container.parentNode) {
-                container.parentNode.removeChild(container);
-            }
-        });
+        closeBtn.addEventListener("click", container.close);
 
-        document.body.appendChild(container);
+        container.open();
+
+        return container;
     }
 
-    function element(nodeName, content, attributes, eventListeners) {
-        var node = document.createElement(nodeName);
-        appendChildren(node, content);
-        setAttributes(node, attributes);
-        addEventListeners(node, eventListeners);
-        return node;
+    /**
+     * creates an element with certain content and attributes
+     *
+     * @param {string} elementName
+     * @param {string|Number|Node|Node[]|undefined ?} content
+     * @param {object|undefined ?} attributes
+     * @return {Element}
+     */
+    function elm(elementName, content, attributes) {
+        var element = document.createElement(elementName);
+        appendChildren(element, content);
+        setAttributes(element, attributes);
+        return element;
     }
 
-    function appendChildren(node, content) {
+    /**
+     * appends children into a node
+     *
+     * @param {HTMLElement} element
+     * @param {string|Node|Node[]} content
+     */
+    function appendChildren(element, content) {
         var append = function (t) {
-            if ("string" == typeof t) {
-                node.innerHTML += t;
-            } else if (t instanceof HTMLElement) {
-                node.appendChild(t);
+            if (/string|number/.test(typeof t)) {
+                var textNode = document.createTextNode(t);
+                element.appendChild(textNode);
+            } else if (t instanceof Node) {
+                element.appendChild(t);
+            } else if (t && t.html) {
+                element.innerHTML += t.html;
             }
         };
         if (content instanceof Array) {
@@ -203,28 +244,28 @@ use yii\helpers\Url;
         }
     }
 
-    function setAttributes(node, attributes) {
+    /**
+     * sets attributes for a node
+     *
+     * @param {HTMLElement} element
+     * @param {object} attributes
+     */
+    function setAttributes(element, attributes) {
         if (attributes) {
             var attrName;
             for (attrName in attributes) {
                 if (attributes.hasOwnProperty(attrName)) {
-                    node.setAttribute(attrName, attributes[attrName]);
-                }
-            }
-        }
-    }
-
-    function addEventListeners(node, listeners) {
-        if (listeners) {
-            var eventName;
-            for (eventName in listeners) {
-                if (listeners.hasOwnProperty(eventName)) {
-                    if (listeners[eventName] instanceof Array) {
-                        listeners[eventName].forEach(function (listener) {
-                            node.addEventListener(eventName, listener)
-                        })
-                    } else {
-                        node.addEventListener(eventName, listeners[eventName]);
+                    var attrValue = attributes[attrName];
+                    switch (typeof attrValue) {
+                        case "string":
+                        case "number":
+                            element.setAttribute(attrName, attrValue);
+                            break;
+                        case "function":
+                        case "boolean":
+                            element[attrName] = attrValue;
+                            break;
+                        default:
                     }
                 }
             }
@@ -237,24 +278,28 @@ use yii\helpers\Url;
         }
     }
 
+    /**
+     *
+     * @param {string} str
+     * @return {string}
+     */
+    function camelCaseToDash(str) {
+        return str.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
+    }
+
+    /**
+     *
+     * @param {object} obj
+     * @return {string}
+     */
     function style(obj) {
         var result_array = [];
         var attrName;
         for (attrName in obj) {
-            if (Object.prototype.hasOwnProperty.call(obj, attrName)) {
-                result_array.push(attrName + ":" + obj[attrName]);
+            if (obj.hasOwnProperty(attrName)) {
+                result_array.push(camelCaseToDash(attrName) + ": " + obj[attrName]);
             }
         }
-        return result_array.join(";");
-    }
-
-    function isContains(root, elem) {
-        if (root.contains(elem)) {
-            return true;
-        } else {
-            return [].some.call(root.children, function (child) {
-                return isContains(child, elem);
-            });
-        }
+        return result_array.join("; ");
     }
 </script>

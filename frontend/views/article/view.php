@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $model->name;
     ]);
     ?>
     <div class="story">
-        <h2 class="name"><?= Html::encode($model->name) ?></h2>
+        <h1 class="name"><?= Html::encode($model->name) ?></h1>
         <div class="info">
             <?= $this->render('_info', compact('model')) ?>
         </div>
