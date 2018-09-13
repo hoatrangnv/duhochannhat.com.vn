@@ -25,7 +25,7 @@ use yii\helpers\Html;
             if ($category->long_description) {
                 ?>
                 <div class="long-desc paragraph">
-                    <div class="expandable-content">
+                    <div class="expandable-content expandable">
                         <?= $category->long_description ?>
                     </div>
                 </div>
@@ -88,6 +88,9 @@ use yii\helpers\Html;
                     }
                 });
                 expandable.parentElement.appendChild(button);
+            } else {
+                expandable.classList.remove('expandable');
+
             }
         });
     }(document.querySelectorAll('.expandable-content'))
