@@ -24,9 +24,11 @@ use yii\helpers\Html;
             <?php
             if ($category->introduction) {
                 ?>
-                <div class="long-desc paragraph">
+                <div class="long-desc">
                     <div class="expandable-content expandable">
-                        <?= $category->introduction ?>
+                        <div class="paragraph">
+                            <?= $category->introduction ?>
+                        </div>
                     </div>
                 </div>
                 <?php
