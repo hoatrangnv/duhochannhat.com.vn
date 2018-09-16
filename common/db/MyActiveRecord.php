@@ -251,7 +251,7 @@ class MyActiveRecord extends ActiveRecord
         }
 
         if (!$attributes) {
-            $attributes = ['content', 'long_description'];
+            $attributes = ['content', 'long_description', 'introduction'];
         }
 
         foreach ($attributes as $attribute) {

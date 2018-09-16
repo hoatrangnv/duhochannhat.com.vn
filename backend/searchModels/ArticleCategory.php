@@ -13,18 +13,18 @@ use backend\models\ArticleCategory as ArticleCategoryModel;
 class ArticleCategory extends ArticleCategoryModel
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id', 'active', 'visible', 'featured', 'allow_indexing', 'allow_following', 'sort_order', 'type', 'creator_id', 'updater_id', 'avatar_image_id', 'parent_id'], 'integer'],
-            [['name', 'slug', 'heading', 'page_title', 'meta_title', 'meta_keywords', 'meta_description', 'long_description', 'displaying_areas', 'created_time', 'updated_time'], 'safe'],
+            [['name', 'slug', 'heading', 'page_title', 'meta_title', 'meta_keywords', 'meta_description', 'long_description', 'introduction', 'displaying_areas', 'created_time', 'updated_time'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -89,6 +89,7 @@ class ArticleCategory extends ArticleCategoryModel
             ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords])
             ->andFilterWhere(['like', 'meta_description', $this->meta_description])
             ->andFilterWhere(['like', 'long_description', $this->long_description])
+            ->andFilterWhere(['like', 'introduction', $this->introduction])
             ->andFilterWhere(['like', 'displaying_areas', $this->displaying_areas]);
 
         return $dataProvider;

@@ -23,6 +23,7 @@ use yii\web\UrlManager;
  * @property string $meta_keywords
  * @property string $meta_description
  * @property string $long_description
+ * @property string $introduction
  * @property int $active
  * @property int $visible
  * @property int $featured
@@ -277,7 +278,7 @@ class ArticleCategory extends \common\db\MyActiveRecord
     {
         return [
             [['name', 'slug', 'sort_order', 'type'], 'required'],
-            [['long_description'], 'string'],
+            [['long_description', 'introduction'], 'string'],
             [['active', 'visible', 'featured', 'allow_indexing', 'allow_following', 'sort_order', 'type', 'avatar_image_id', 'parent_id'], 'integer'],
             [['name', 'slug', 'heading', 'page_title', 'meta_title'], 'string', 'max' => 255],
             [['meta_keywords', 'meta_description'], 'string', 'max' => 511],
@@ -303,6 +304,7 @@ class ArticleCategory extends \common\db\MyActiveRecord
             'meta_keywords' => 'Meta Keywords',
             'meta_description' => 'Meta Description',
             'long_description' => 'Long Description',
+            'introduction' => 'Introduction',
             'active' => 'Active',
             'visible' => 'Visible',
             'featured' => 'Featured',

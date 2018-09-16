@@ -66,6 +66,8 @@ use backend\models\ArticleCategory;
 
     <div class="row">
         <div class="col-md-12">
+            <?= $form->field($model, 'introduction')->textarea(['rows' => 6]) ?>
+
             <?= $form->field($model, 'long_description')->textarea(['rows' => 6]) ?>
         </div>
     </div>
@@ -79,6 +81,7 @@ use backend\models\ArticleCategory;
 </div>
 
 <script>
+    initCKEditor("<?= Html::getInputId($model, 'introduction') ?>");
     initCKEditor("<?= Html::getInputId($model, 'long_description') ?>");
 </script>
 

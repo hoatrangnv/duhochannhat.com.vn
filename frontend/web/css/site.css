@@ -1572,3 +1572,14 @@ footer a:hover {
     min-width: 100px;
     border-radius: 4px;
 }
+
+/**
+ * BOTTOM DESC
+ */
+#bottom-desc {
+    margin-top: 2rem;
+}
+#bottom-desc .content {
+    padding: 2rem;
+    background: #f8f8f8;
+}
