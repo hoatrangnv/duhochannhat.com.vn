@@ -67,5 +67,11 @@ use yii\helpers\Url;
             }
             ?>
         </ul>
+        <div class="dmca">
+            <a href="//www.dmca.com/Protection/Status.aspx?id=0dec6bd0-01fa-4e56-a3e0-bda48ce6588a" title="DMCA.com Protection Status" class="dmca-badge">
+                <img src="//images.dmca.com/Badges/dmca-badge-w150-5x1-01.png?ID=0dec6bd0-01fa-4e56-a3e0-bda48ce6588a" alt="DMCA.com Protection Status">
+            </a>
+            <script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+        </div>
     </div>
 </footer>
