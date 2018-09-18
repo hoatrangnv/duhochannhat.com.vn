@@ -1056,6 +1056,9 @@ footer a:hover {
     text-decoration: underline;
     color: #17b;
 }
+footer * + .dmca {
+    margin-top: 1rem;
+}
 
 /** IMAGE */
 .image > span > img {
