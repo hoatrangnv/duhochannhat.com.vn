@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'meta_keywords',
             'meta_description',
             'long_description:ntext',
+            'introduction:ntext',
             'active',
             'visible',
             'featured',

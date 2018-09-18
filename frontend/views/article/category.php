@@ -22,11 +22,13 @@ use yii\helpers\Html;
                 <?= $this->render('//layouts/likeShare') ?>
             </div>
             <?php
-            if ($category->long_description) {
+            if ($category->introduction) {
                 ?>
-                <div class="long-desc paragraph">
+                <div class="long-desc">
                     <div class="expandable-content expandable">
-                        <?= $category->long_description ?>
+                        <div class="paragraph">
+                            <?= $category->introduction ?>
+                        </div>
                     </div>
                 </div>
                 <?php

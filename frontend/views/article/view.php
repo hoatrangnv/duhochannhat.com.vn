@@ -66,7 +66,8 @@ $this->params['breadcrumbs'][] = $model->name;
         }
         ?>
         <div class="content paragraph">
-            <?= str_replace('<em><strong>Các đảo chính của Nhật:</strong></em>', $this->render('//contact/_form'), $model->content) ?>
+            <?php //echo str_replace('<em><strong>Các đảo chính của Nhật:</strong></em>', $this->render('//contact/_form'), $model->content); ?>
+            <?= $model->content ?>
         </div>
         <?php
         if (count($model->tags) > 0) {

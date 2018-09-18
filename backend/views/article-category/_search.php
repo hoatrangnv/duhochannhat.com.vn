@@ -33,6 +33,8 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'long_description') ?>
 
+    <?php // echo $form->field($model, 'introduction') ?>
+
     <?php // echo $form->field($model, 'active') ?>
 
     <?php // echo $form->field($model, 'visible') ?>
