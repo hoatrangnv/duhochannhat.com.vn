@@ -9,6 +9,7 @@
 namespace frontend\controllers;
 
 
+use Aws\Common\Enum\DateFormat;
 use common\models\UrlParam;
 use frontend\models\Article;
 use frontend\models\ArticleCategory;
@@ -137,7 +138,7 @@ class SitemapController extends Controller
         foreach ($models as $model) {
             $url = [
                 'loc' => $model->viewUrl([], true),
-                'lastmod' => date('c', 360 * floor($model->updated_time / 360)),
+                'lastmod' => (new \DateTime($model->updated_time))->format('c'),
                 'changefreq' => 'hourly',
                 'priority' => '0.8',
             ];
@@ -199,7 +200,7 @@ class SitemapController extends Controller
         foreach ($models as $model) {
             $url = [
                 'loc' => $model->viewUrl([], true),
-                'lastmod' => date('c', 360 * floor($model->updated_time / 360)),
+                'lastmod' => (new \DateTime($model->updated_time))->format('c'),
                 'changefreq' => 'hourly',
                 'priority' => '0.6',
             ];
@@ -261,7 +262,7 @@ class SitemapController extends Controller
         foreach ($models as $model) {
             $url = [
                 'loc' => $model->viewUrl([], true),
-                'lastmod' => date('c', 360 * floor($model->updated_time / 360)),
+                'lastmod' => (new \DateTime($model->updated_time))->format('c'),
                 'changefreq' => 'hourly',
                 'priority' => '0.6',
             ];
