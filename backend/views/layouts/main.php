@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
+use backend\models\Contact;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -45,6 +46,9 @@ AppAsset::register($this);
          * @var $user \common\models\User
          */
         $user = Yii::$app->user->identity;
+
+        $newContactCount = Contact::find()->where(['status' => Contact::STATUS__NEW])->count();
+
         $menuItems = array_merge(
             $menuItems,
             [
@@ -66,6 +70,10 @@ AppAsset::register($this);
                     ['label' => 'List', 'url' => ['/image/default/index']],
                     ['label' => 'Create New', 'url' => ['/image/default/create']],
                 ]],
+                [
+                    'label' => 'Contact' . ($newContactCount > 0 ? " <span class='label label-danger'>$newContactCount</span>" : ''),
+                    'url' => ['/contact/index']
+                ],
                 ['label' => 'More', 'items' => [
                     ['label' => 'Menu Item', 'url' => ['/menu-item/index']],
                     ['label' => 'Static Page Info', 'url' => ['/static-page-info/index']],
