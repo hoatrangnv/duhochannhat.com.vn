@@ -11,6 +11,7 @@ namespace frontend\controllers;
 use common\db\MyActiveQuery;
 use common\models\MenuItem;
 use common\models\UrlParam;
+use common\modules\urlRedirection\models\UrlRedirection;
 use frontend\models\Article;
 use frontend\models\ArticleCategory;
 use frontend\models\Tag;
@@ -86,6 +87,10 @@ class ArticleController extends BaseController
     public function actionCategory()
     {
         $category = ArticleCategory::findOneBySlug(Yii::$app->request->get(UrlParam::SLUG));
+
+        if (!$category) {
+            UrlRedirection::findOneAndRedirect();
+        }
 
         if (!$category) {
             throw new NotFoundHttpException();
@@ -214,6 +219,11 @@ class ArticleController extends BaseController
             'visible' => 1,
             'slug' => $slug
         ]);
+
+        if (!$model) {
+            UrlRedirection::findOneAndRedirect();
+        }
+
         if (!$model) {
             throw new NotFoundHttpException();
         }

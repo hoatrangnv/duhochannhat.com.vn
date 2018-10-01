@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\UrlParam;
+use common\modules\urlRedirection\models\UrlRedirection;
 use frontend\models\ArticleCategory;
 use frontend\models\Tag;
 use Yii;
@@ -20,6 +21,10 @@ class TagController extends BaseController
     public function actionView()
     {
         $tag = Tag::findOne(['slug' => Yii::$app->request->get(UrlParam::SLUG)]);
+
+        if (!$tag) {
+            UrlRedirection::findOneAndRedirect();
+        }
 
         if (!$tag) {
             throw new NotFoundHttpException();

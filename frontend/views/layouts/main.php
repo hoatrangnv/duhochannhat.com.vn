@@ -36,9 +36,7 @@ $hasPageHeadline = in_array(Yii::$app->requestedRoute, ['site/index', 'article/c
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <?php $this->head() ?>
-    <!--<script src="http://hammerjs.github.io/dist/hammer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>-->
-    <?= $this->render('//layouts/js') ?>
+    <?= $this->render('//layouts/headerJs') ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -76,6 +74,8 @@ $hasPageHeadline = in_array(Yii::$app->requestedRoute, ['site/index', 'article/c
 
     <?= $this->render('//layouts/bottomDesc') ?>
     <?= $this->render('//layouts/footer') ?>
+
+    <?= $this->render('//layouts/footerJs') ?>
 
     <?= $this->render('//layouts/fbSDK') ?>
     <?= $this->render('//layouts/googlePlatform') ?>

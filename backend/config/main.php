@@ -18,6 +18,9 @@ return [
     'modules' => [
         'image' => [
             'class' => 'common\modules\image\Module',
+        ],
+        'url-redirection' => [
+            'class' => 'common\modules\urlRedirection\Module',
         ]
     ],
     'components' => [

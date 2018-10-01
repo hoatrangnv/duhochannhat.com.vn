@@ -62,21 +62,15 @@ AppAsset::register($this);
                     ['label' => 'List', 'url' => ['/banner/index']],
                     ['label' => 'Create New', 'url' => ['/banner/create']],
                 ]],
-                ['label' => 'Menu Item', 'items' => [
-                    ['label' => 'List', 'url' => ['/menu-item/index']],
-                    ['label' => 'Create New', 'url' => ['/menu-item/create']],
-                ]],
-                ['label' => 'Static Page Info', 'items' => [
-                    ['label' => 'List', 'url' => ['/static-page-info/index']],
-                    ['label' => 'Create New', 'url' => ['/static-page-info/create']],
-                ]],
-                ['label' => 'Site Param', 'items' => [
-                    ['label' => 'List', 'url' => ['/site-param/index']],
-                    ['label' => 'Create New', 'url' => ['/site-param/create']],
-                ]],
                 ['label' => 'Image', 'items' => [
                     ['label' => 'List', 'url' => ['/image/default/index']],
                     ['label' => 'Create New', 'url' => ['/image/default/create']],
+                ]],
+                ['label' => 'More', 'items' => [
+                    ['label' => 'Menu Item', 'url' => ['/menu-item/index']],
+                    ['label' => 'Static Page Info', 'url' => ['/static-page-info/index']],
+                    ['label' => 'Site Param', 'url' => ['/site-param/index']],
+                    ['label' => 'Url Redirection', 'url' => ['/url-redirection/default/index']],
                 ]],
                 ['label' => 'User', 'items' => [
                     ['label' => 'List', 'url' => ['/user/index']],

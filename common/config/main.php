@@ -30,6 +30,8 @@ return [
                 'sitemap-article-<' . UrlParam::PAGE . ':\d+>.xml' => 'sitemap/article',
                 'sitemap-tag-<' . UrlParam::PAGE . ':\d+>.xml' => 'sitemap/tag',
 
+                'api/save-new-contact' => 'api/save-new-contact',
+
                 '' => 'site/index',
                 '/' => 'site/index',
                 '<' . UrlParam::SLUG . '>.html' => 'article/view',

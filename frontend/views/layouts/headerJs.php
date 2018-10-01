@@ -139,10 +139,15 @@ use yii\helpers\Url;
 
         var image = content instanceof HTMLElement ? content : elm(
             'div',
-            content,
+            {
+                html: content
+            },
             {
                 style: style({
-                    padding: "30px"
+                    padding: "3rem",
+                    background: "#FFF",
+                    maxWidth: "95vw",
+                    maxHeight: "95vh"
                 })
             }
         );
@@ -155,9 +160,7 @@ use yii\helpers\Url;
                 {
                     'class': 'popup-overlay',
                     style: style({
-                        display: "block"//,
-//                        marginTop: "10vh",
-//                        marginBottom: "10vh"
+                        display: "block"
                     })
                 }
             ),
@@ -172,9 +175,9 @@ use yii\helpers\Url;
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "flex-start",
+                    justifyContent: "center",
                     zIndex: 9999,
-                    backgroundColor: "rgba(0, 0, 0, 0.9)",
+                    backgroundColor: "rgba(0, 0, 0, 0.75)",
                     overflowY: "auto",
                     "-webkit-overflow-scrolling": "touch"
                 }),
