@@ -32,7 +32,7 @@ class Contact extends \common\db\MyActiveRecord
     const STATUS__CLOSED = 4;
 
     public static $allTypeLabels = [
-        self::TYPE__ADVISORY_REQUEST => 'Yêu cầu tư vấn',
+        self::TYPE__ADVISORY_REQUEST => 'Tư vấn',
     ];
 
     public static $allStatusLabels = [
