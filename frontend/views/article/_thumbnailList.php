@@ -6,12 +6,16 @@
 
 use yii\helpers\Html;
 
+if (!isset($imageSize)) {
+    $imageSize = null;
+}
+
 foreach ($models as $model) {
     ?>
     <div class="item">
         <?= $model->viewAnchor(
             '<div class="image"><span>'
-            . $model->avatarImg()
+            . $model->avatarImg($imageSize)
             . '</span></div>'
 
             . '<h3 class="name">'
