@@ -67,7 +67,7 @@ $articles = array_merge($articles_1, $articles_2, $articles_3, $articles_4);
             <li>
                 <?= $item->viewAnchor(
                     '<div class="image"><span>'
-                    . $item->avatarImg()
+                    . $item->avatarImg('140x94')
                     . '</span></div>'
 
                     . '<h4 class="name">'

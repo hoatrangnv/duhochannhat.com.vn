@@ -41,7 +41,7 @@ foreach ($article_categories as $category) {
                     <?php
                     if (1 == $i) {
                         echo $article->viewAnchor(
-                            '<div class="image"><span>' . $article->avatarImg() . '</span></div>'
+                            '<div class="image"><span>' . $article->avatarImg('140x94') . '</span></div>'
                             . '<h3 class="name">' . $article->name . '</h3>',
                             ['class' => 'clr']
                         );
