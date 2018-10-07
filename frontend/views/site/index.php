@@ -20,7 +20,7 @@ use yii\helpers\Html;
                 if ($top_count > 0) {
                     echo $top_articles[0]->viewAnchor(
                         '<div class="image"><span>'
-                        . $top_articles[0]->avatarImg()
+                        . $top_articles[0]->avatarImg('405x275')
                         . '</span></div>'
 
                         . '<h3 class="name">'
@@ -42,7 +42,7 @@ use yii\helpers\Html;
                         <li class="clr">
                             <?php
                             echo $top_articles[$i]->viewAnchor(
-                                '<div class="image"><span>' . $top_articles[$i]->avatarImg() . '</span></div>'
+                                '<div class="image"><span>' . $top_articles[$i]->avatarImg('72x48') . '</span></div>'
                                 . '<h3 class="name">'
                                 . Html::encode($top_articles[$i]->name)
                                 . '</h3>'
@@ -67,7 +67,7 @@ use yii\helpers\Html;
                             <?php
                             echo $top_articles[$i]->viewAnchor(
                                 '<div class="image"><span>'
-                                . $top_articles[$i]->avatarImg()
+                                . $top_articles[$i]->avatarImg('163x109')
                                 . '</span></div>'
 
                                 . '<h3 class="name">'
@@ -136,7 +136,7 @@ use yii\helpers\Html;
                             if ($article_count > 0) {
                                 echo $articles[0]->viewAnchor(
                                     '<div class="image"><span>'
-                                    . $articles[0]->avatarImg()
+                                    . $articles[0]->avatarImg('336x224')
                                     . '</span></div>'
 
                                     . '<h3 class="name">'
@@ -158,7 +158,7 @@ use yii\helpers\Html;
                                     <li class="clr">
                                         <?= $articles[$i]->viewAnchor(
                                             '<div class="image"><span>'
-                                            . $articles[$i]->avatarImg()
+                                            . $articles[$i]->avatarImg('72x48')
                                             . '</span></div>'
 
                                             . '<h3 class="name">'
@@ -194,6 +194,7 @@ use yii\helpers\Html;
                         <div class="extra sm-hidden">
                             <ul>
                                 <?php
+                                /*
                                 $i = 0;
                                 foreach ($category->findChildren() as $child) {
                                     $i++;
@@ -210,6 +211,7 @@ use yii\helpers\Html;
                                     </li>
                                     <?php
                                 }
+                                */
                                 ?>
                             </ul>
                         </div>
@@ -229,7 +231,7 @@ use yii\helpers\Html;
                             foreach ($articles as $article) {
                                 echo $article->viewAnchor(
                                     '<div class="video-cover">'
-                                    . "<div class='image'><span>{$article->avatarImg()}</span></div>"
+                                    . "<div class='image'><span>{$article->avatarImg('336x224')}</span></div>"
                                     . '<div class="overlay"><div class="icon play-icon"></div></div>'
                                     . '</div>'
                                     . "<h3 class='name'>$article->name</h3>",

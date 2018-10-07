@@ -9,6 +9,8 @@
  */
 use frontend\models\ArticleCategory;
 use yii\helpers\Html;
+
+$imageSize = '198x132';
 ?>
 <div class="left">
     <section class="story-category">
@@ -37,7 +39,7 @@ use yii\helpers\Html;
             <div class="thumbnail-story-list aspect-ratio __3x2">
                 <?php
                 if (count($models) > 0) {
-                    echo $this->render('_thumbnailList', compact('models'));
+                    echo $this->render('_thumbnailList', compact('models', 'imageSize'));
                 } else {
                     echo 'Chưa có nội dung cho mục này.';
                 }

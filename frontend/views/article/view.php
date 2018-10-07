@@ -128,7 +128,7 @@ $this->params['breadcrumbs'][] = $model->name;
             </div>
             <div class="body clr">
                 <div class="thumbnail-story-list aspect-ratio __3x2">
-                    <?= $this->render('_thumbnailList', ['models' => $relatedItems]) ?>
+                    <?= $this->render('_thumbnailList', ['models' => $relatedItems, 'imageSize' => '198x132']) ?>
                 </div>
             </div>
         </section>
