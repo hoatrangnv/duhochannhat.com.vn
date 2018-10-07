@@ -18,7 +18,8 @@ use yii\web\View;
          * http://docs.cksource.com/CKEditor_3.x/Developers_Guide/File_Browser_(Uploader)
          */
         CKEDITOR.timestamp = Math.floor(new Date() / 1800000);
-        return CKEDITOR.replace(id, {
+
+        var editor = CKEDITOR.replace(id, {
             extraPlugins: 'uploadimage',
             height: 300,
 
@@ -47,6 +48,16 @@ use yii\web\View;
             image2_alignClasses: ['image-align-left', 'image-align-center', 'image-align-right'],
             image2_disableResizer: true
         });
+
+        for(var instanceName in CKEDITOR.instances) {
+            if (CKEDITOR.instances.hasOwnProperty(instanceName)) {
+                CKEDITOR.instances[instanceName].on('change', function () {
+                    this.updateElement();
+                });
+            }
+        }
+
+        return editor;
     }
 </script>
 
