@@ -5,6 +5,7 @@
  * Date: 9/17/2018
  * Time: 1:14 AM
  */
+use frontend\models\Util;
 
 /**
  * @var $this \yii\web\View
@@ -15,7 +16,7 @@ if ($seoInfo->long_description) {
     ?>
     <div class="container" id="bottom-desc">
         <div class="content paragraph">
-            <?= $seoInfo->long_description ?>
+            <?= Util::embedAdvisoryFromToContent($this, $seoInfo->long_description); ?>
         </div>
     </div>
     <?php

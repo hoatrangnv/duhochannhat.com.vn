@@ -8,17 +8,13 @@
  * @var $page integer
  */
 use frontend\models\ArticleCategory;
+use frontend\models\Util;
 use yii\helpers\Html;
 
 $imageSize = '198x132';
 ?>
 <div class="left">
     <section class="story-category">
-        <!--<div class="heading clr">
-            <h2 class="title">
-                <span><?= Html::encode($category->name) ?></span>
-            </h2>
-        </div>-->
         <div class="body clr">
             <div class="shares">
                 <?= $this->render('//layouts/likeShare') ?>
@@ -29,7 +25,7 @@ $imageSize = '198x132';
                 <div class="long-desc">
                     <div class="expandable-content expandable">
                         <div class="paragraph">
-                            <?= $category->introduction ?>
+                            <?= Util::embedAdvisoryFromToContent($this, $category->introduction); ?>
                         </div>
                     </div>
                 </div>
