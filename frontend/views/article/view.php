@@ -6,6 +6,7 @@
  * @var $relatedItems \frontend\models\Article[]
  */
 use frontend\models\ArticleCategory;
+use frontend\models\Util;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
@@ -66,34 +67,7 @@ $this->params['breadcrumbs'][] = $model->name;
         }
         ?>
         <div class="content paragraph">
-            <?php
-            $preg_open = "[[";
-            $preg_close = "]]";
-            $preg_pattern_template = "/open((?:(?!open)(?!close)[\\s\\S])*)close/";
-            $preg_pattern = str_replace(
-                ['open', 'close'],
-                [preg_quote($preg_open), preg_quote($preg_close)],
-                $preg_pattern_template
-            );
-
-            $preg_callback = function ($matches) {
-                if (strpos($matches[1], 'ADVISORY_FORM_JAPAN') !== false) {
-                    return $this->render('//contact/_form', ['country' => 'Nhật Bản']);
-                }
-
-                if (strpos($matches[1], 'ADVISORY_FORM_KOREA') !== false) {
-                    return $this->render('//contact/_form', ['country' => 'Hàn Quốc']);
-                }
-
-                return $matches[0];
-            };
-
-            $replace_with_forms = function ($content) use ($preg_pattern, $preg_callback) {
-                return preg_replace_callback($preg_pattern, $preg_callback, $content);
-            };
-
-            echo $replace_with_forms($model->content);
-            ?>
+            <?= Util::embedAdvisoryFromToContent($this, $model->content); ?>
         </div>
         <?php
         if (count($model->tags) > 0) {
