@@ -76,7 +76,8 @@ use yii\helpers\Url;
                 if (phone.match(/^\d{10}/)) {
                     flag = true;
                 }
-            } else if (firstNumber === '01' && phone.length === 11) {
+            }
+            else if (/01|03/.test(firstNumber) && phone.length === 11) {
                 if (phone.match(/^\d{11}/)) {
                     flag = true;
                 }
