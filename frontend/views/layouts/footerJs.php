@@ -72,12 +72,14 @@ use yii\helpers\Url;
         phone = phone.replace(/ /g, '');
         if (phone !== '') {
             var firstNumber = phone.substring(0, 2);
+
             if ((firstNumber === '09' || firstNumber === '08') && phone.length === 10) {
                 if (phone.match(/^\d{10}/)) {
                     flag = true;
                 }
             }
-            else if (/01|03/.test(firstNumber) && phone.length === 11) {
+
+            else if ((firstNumber === '01' || firstNumber === '03') && phone.length === 11) {
                 if (phone.match(/^\d{11}/)) {
                     flag = true;
                 }
