@@ -4,6 +4,6 @@ return [
     'supportEmail' => 'support@example.com',
     'user.passwordResetTokenExpire' => 3600,
     'amp' => false,
-    'facebook.appID' => '1524245454360711',
-    'facebook.appSecretKey' => 'd093ef7d8336163fa29e3f7c9c77671c',
+    'facebook.appID' => '2226252680783417',
+    'facebook.appSecretKey' => '2c8ddcdba9b7197bd8f17e8812e42915',
 ];
