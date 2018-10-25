@@ -14,14 +14,17 @@ use Yii;
  */
 class SiteParam extends \common\db\MyActiveRecord
 {
-    const COMPANY_NAME = 'company_name';
-    const LOGO_IMAGE_SRC = 'logo_image_src';
+    const COMPANY = 'company';
     const ADDRESS = 'address';
-    const PHONE_NUMBER = 'phone_number';
-    const HOTLINE = 'hotline';
+    const FACTORY_ADDRESS = 'factory_address';
+    const PHONE = 'phone';
     const EMAIL = 'email';
-    const FACEBOOK_PAGE_URL = 'facebook_page_url';
-    const FOOTER_INFO_HTML = 'footer_info_html';
+    const FACEBOOK_PAGE = 'facebook_page';
+    const INSTAGRAM_PAGE = 'instagram_page';
+    const PINTEREST_PAGE = 'pinterest_page';
+    const TUMBLR_PAGE = 'tumblr_page';
+    const TWITTER_PAGE = 'twitter_page';
+    const YOUTUBE_CHANNEL = 'facebook_channel';
     const TRACKING_CODE = 'tracking_code';
 
     /**
@@ -30,14 +33,17 @@ class SiteParam extends \common\db\MyActiveRecord
     public function getParamLabels()
     {
         return [
-            self::COMPANY_NAME => 'Company Name',
-            self::LOGO_IMAGE_SRC => 'Logo Image Src',
+            self::COMPANY => 'Company',
             self::ADDRESS => 'Address',
-            self::PHONE_NUMBER => 'Phone Number',
-            self::HOTLINE => 'Hotline',
+            self::FACTORY_ADDRESS => 'Factory Address',
+            self::PHONE => 'Phone',
             self::EMAIL => 'Email',
-            self::FACEBOOK_PAGE_URL => 'Facebook page URL',
-            self::FOOTER_INFO_HTML => 'Footer Info HTML',
+            self::FACEBOOK_PAGE => 'Facebook page',
+            self::INSTAGRAM_PAGE => 'Instagram page',
+            self::PINTEREST_PAGE => 'Pinterest page',
+            self::TUMBLR_PAGE => 'Tumblr page',
+            self::TWITTER_PAGE => 'Twitter page',
+            self::YOUTUBE_CHANNEL => 'Youtube chanel',
             self::TRACKING_CODE => 'Tracking Code',
         ];
     }

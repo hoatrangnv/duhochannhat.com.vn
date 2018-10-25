@@ -12,61 +12,95 @@ use yii\helpers\Url;
 ?>
 <footer>
     <div class="container">
-        <ul>
-            <?php
-            foreach (SiteParam::findAllByNames([
-                SiteParam::COMPANY_NAME,
-                SiteParam::ADDRESS,
-                SiteParam::PHONE_NUMBER,
-                SiteParam::HOTLINE,
-                SiteParam::EMAIL,
-            ]) as $item) {
-                $value = Html::encode($item->value);
-                switch ($item->name) {
-                    case SiteParam::COMPANY_NAME:
-                        ?>
-                        <li class="com-name">
-                            <span><?= $value ?></span>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::ADDRESS:
-                        ?>
-                        <li class="address">
-                            <span>Địa chỉ:</span>
-                            <span><?= $value ?></span>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::PHONE_NUMBER:
-                        ?>
-                        <li class="phone-number">
-                            <span>Điện thoại:</span>
-                            <a href="tel:<?= $value ?>" title="Bấm để gọi"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::HOTLINE:
-                        ?>
-                        <li class="hotline">
-                            <span>Hotline:</span>
-                            <a href="tel:<?= $value ?>" title="Bấm để gọi"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::EMAIL:
-                        ?>
-                        <li class="email">
-                            <span>Email:</span>
-                            <a href="mailto:<?= $value ?>" title="Gửi email"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-
+        <div class="clr">
+            <ul class="info-block">
+                <?php
+                if ($company = SiteParam::findOneByName(SiteParam::COMPANY)) {
+                    ?>
+                    <li class="company">
+                        <span><?= $company->value ?></span>
+                    </li>
+                    <?php
                 }
-            }
-            ?>
-        </ul>
+
+                if ($address = SiteParam::findOneByName(SiteParam::ADDRESS)) {
+                    ?>
+                    <li class="address">
+                        <?= $address->value ?>
+                    </li>
+                    <?php
+                }
+
+                $phone_values = array_map(function (SiteParam $param) {
+                    return \yii\helpers\Html::a($param->value, "tel:$param->value");
+                }, SiteParam::findAllByNames([SiteParam::PHONE]));
+
+                $email_values = array_map(function (SiteParam $param) {
+                    return \yii\helpers\Html::a($param->value, "mailto:$param->value");
+                }, SiteParam::findAllByNames([SiteParam::EMAIL]));
+
+                if (count($phone_values) > 0) {
+                    ?>
+                    <li class="hotlines">Hotline: <?= implode(', ', $phone_values) ?></li>
+                    <?php
+                }
+
+                if (count($email_values) > 0) {
+                    ?>
+                    <li class="emails">Email: <?= implode(', ', $email_values) ?></li>
+                    <?php
+                }
+
+                ?>
+            </ul>
+
+            <div class="social-block">
+                <?php
+                if ($fb = SiteParam::findOneByName(SiteParam::FACEBOOK_PAGE)) {
+                    ?>
+                    <a href="<?= $fb->value ?>" title="Facebook" target="_blank">
+                        <i class="icon facebook-icon"></i>
+                    </a>
+                    <?php
+                }
+                if ($ins = SiteParam::findOneByName(SiteParam::INSTAGRAM_PAGE)) {
+                    ?>
+                    <a href="<?= $ins->value ?>" title="Instagram" target="_blank">
+                        <i class="icon instagram-icon"></i>
+                    </a>
+                    <?php
+                }
+                if ($yt = SiteParam::findOneByName(SiteParam::YOUTUBE_CHANNEL)) {
+                    ?>
+                    <a href="<?= $yt->value ?>" title="Youtube" target="_blank">
+                        <i class="icon youtube-icon"></i>
+                    </a>
+                    <?php
+                }
+                if ($twt = SiteParam::findOneByName(SiteParam::TWITTER_PAGE)) {
+                    ?>
+                    <a href="<?= $twt->value ?>" title="Pinterest" target="_blank">
+                        <i class="icon twitter-icon"></i>
+                    </a>
+                    <?php
+                }
+                if ($tumblr = SiteParam::findOneByName(SiteParam::TUMBLR_PAGE)) {
+                    ?>
+                    <a href="<?= $tumblr->value ?>" title="Tumblr" target="_blank">
+                        <i class="icon tumblr-icon"></i>
+                    </a>
+                    <?php
+                }
+                if ($pin = SiteParam::findOneByName(SiteParam::PINTEREST_PAGE)) {
+                    ?>
+                    <a href="<?= $pin->value ?>" title="Pinterest" target="_blank">
+                        <i class="icon pinterest-icon"></i>
+                    </a>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
         <div class="dmca">
             <a href="//www.dmca.com/Protection/Status.aspx?id=0dec6bd0-01fa-4e56-a3e0-bda48ce6588a" title="DMCA.com Protection Status" class="dmca-badge">
                 <img src="//images.dmca.com/Badges/dmca-badge-w150-5x1-01.png?ID=0dec6bd0-01fa-4e56-a3e0-bda48ce6588a" alt="DMCA.com Protection Status">
