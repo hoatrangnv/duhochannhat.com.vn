@@ -16,7 +16,6 @@ class SiteParam extends \common\db\MyActiveRecord
 {
     const COMPANY = 'company';
     const ADDRESS = 'address';
-    const FACTORY_ADDRESS = 'factory_address';
     const PHONE = 'phone';
     const EMAIL = 'email';
     const FACEBOOK_PAGE = 'facebook_page';
@@ -35,7 +34,6 @@ class SiteParam extends \common\db\MyActiveRecord
         return [
             self::COMPANY => 'Company',
             self::ADDRESS => 'Address',
-            self::FACTORY_ADDRESS => 'Factory Address',
             self::PHONE => 'Phone',
             self::EMAIL => 'Email',
             self::FACEBOOK_PAGE => 'Facebook page',
