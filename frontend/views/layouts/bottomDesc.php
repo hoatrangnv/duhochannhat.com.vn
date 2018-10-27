@@ -16,7 +16,7 @@ if ($seoInfo->long_description) {
     ?>
     <div class="container" id="bottom-desc">
         <div class="content paragraph">
-            <?= Util::embedAdvisoryFromToContent($this, $seoInfo->long_description); ?>
+            <?= Util::embedAdvisoryFormToContent($this, $seoInfo->long_description); ?>
         </div>
     </div>
     <?php

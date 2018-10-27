@@ -13,11 +13,11 @@ use yii\web\View;
 
 class Util
 {
-    public static function embedAdvisoryFromToContent(View $view, $content) {
+    public static function embedAdvisoryFormToContent(View $view, $content) {
 
         $preg_open = "[[";
         $preg_close = "]]";
-        $preg_pattern_template = "/open((?:(?!open)(?!close)[\\s\\S])*)close/";
+        $preg_pattern_template = "/open([\\s\\S]*?)close/";
         $preg_pattern = str_replace(
             ['open', 'close'],
             [preg_quote($preg_open), preg_quote($preg_close)],

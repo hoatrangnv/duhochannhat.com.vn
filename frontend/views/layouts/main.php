@@ -74,9 +74,9 @@ $hasPageHeadline = in_array(Yii::$app->requestedRoute, ['site/index', 'article/c
 
     <?= $this->render('//layouts/bottomDesc') ?>
     <?= $this->render('//layouts/footer') ?>
+    <?= $this->render('//layouts/fbChatOverlay') ?>
 
     <?= $this->render('//layouts/footerJs') ?>
-
     <?= $this->render('//layouts/fbSDK') ?>
     <?= $this->render('//layouts/googlePlatform') ?>
     <?= $this->render('//layouts/twitterWidget') ?>

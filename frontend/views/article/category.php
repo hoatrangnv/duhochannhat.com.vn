@@ -25,7 +25,7 @@ $imageSize = '198x132';
                 <div class="long-desc">
                     <div class="expandable-content expandable">
                         <div class="paragraph">
-                            <?= Util::embedAdvisoryFromToContent($this, $category->introduction); ?>
+                            <?= Util::embedAdvisoryFormToContent($this, $category->introduction); ?>
                         </div>
                     </div>
                 </div>

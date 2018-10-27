@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $model->name;
         }
         ?>
         <div class="content paragraph">
-            <?= Util::embedAdvisoryFromToContent($this, $model->content); ?>
+            <?= Util::embedAdvisoryFormToContent($this, $model->content); ?>
         </div>
         <?php
         if (count($model->tags) > 0) {

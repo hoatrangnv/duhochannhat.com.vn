@@ -1713,3 +1713,36 @@ footer .info-block li + li {
     height: 100%;
 }
 
+/**
+ * FB CHAT OVERLAY
+ */
+.fb-chat-overlay {
+    position: fixed;
+    z-index: 99;
+    right: 1rem;
+    bottom: 0;
+}
+.fb-chat-overlay svg {
+    display: inline-block;
+}
+.fb-chat-title {
+    padding: 5px 10px;
+    background: #F7B223;
+    color: #fff;
+    cursor: pointer;
+}
+.fb-chat-title * {
+    vertical-align: middle;
+}
+.fb-chat-overlay .fb-chat-content {
+    display: none;
+    background: #fff;
+}
+.fb-chat-overlay.active .fb-chat-content {
+    display: block;
+}
+@media screen and (max-width: 640px) {
+    .fb-chat-overlay {
+        right: 0.5rem;
+    }
+}
