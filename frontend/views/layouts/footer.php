@@ -58,42 +58,42 @@ use yii\helpers\Url;
                 <?php
                 if ($fb = SiteParam::findOneByName(SiteParam::FACEBOOK_PAGE)) {
                     ?>
-                    <a href="<?= $fb->value ?>" title="Facebook" target="_blank">
+                    <a href="<?= $fb->value ?>" title="Facebook" target="_blank" rel="nofollow">
                         <i class="icon facebook-icon"></i>
                     </a>
                     <?php
                 }
                 if ($ins = SiteParam::findOneByName(SiteParam::INSTAGRAM_PAGE)) {
                     ?>
-                    <a href="<?= $ins->value ?>" title="Instagram" target="_blank">
+                    <a href="<?= $ins->value ?>" title="Instagram" target="_blank" rel="nofollow">
                         <i class="icon instagram-icon"></i>
                     </a>
                     <?php
                 }
                 if ($yt = SiteParam::findOneByName(SiteParam::YOUTUBE_CHANNEL)) {
                     ?>
-                    <a href="<?= $yt->value ?>" title="Youtube" target="_blank">
+                    <a href="<?= $yt->value ?>" title="Youtube" target="_blank" rel="nofollow">
                         <i class="icon youtube-icon"></i>
                     </a>
                     <?php
                 }
                 if ($twt = SiteParam::findOneByName(SiteParam::TWITTER_PAGE)) {
                     ?>
-                    <a href="<?= $twt->value ?>" title="Pinterest" target="_blank">
+                    <a href="<?= $twt->value ?>" title="Pinterest" target="_blank" rel="nofollow">
                         <i class="icon twitter-icon"></i>
                     </a>
                     <?php
                 }
                 if ($tumblr = SiteParam::findOneByName(SiteParam::TUMBLR_PAGE)) {
                     ?>
-                    <a href="<?= $tumblr->value ?>" title="Tumblr" target="_blank">
+                    <a href="<?= $tumblr->value ?>" title="Tumblr" target="_blank" rel="nofollow">
                         <i class="icon tumblr-icon"></i>
                     </a>
                     <?php
                 }
                 if ($pin = SiteParam::findOneByName(SiteParam::PINTEREST_PAGE)) {
                     ?>
-                    <a href="<?= $pin->value ?>" title="Pinterest" target="_blank">
+                    <a href="<?= $pin->value ?>" title="Pinterest" target="_blank" rel="nofollow">
                         <i class="icon pinterest-icon"></i>
                     </a>
                     <?php

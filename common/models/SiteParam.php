@@ -19,6 +19,7 @@ class SiteParam extends \common\db\MyActiveRecord
     const PHONE = 'phone';
     const EMAIL = 'email';
     const FACEBOOK_PAGE = 'facebook_page';
+    const FACEBOOK_CHAT_TITLE = 'facebook_chat_title';
     const INSTAGRAM_PAGE = 'instagram_page';
     const PINTEREST_PAGE = 'pinterest_page';
     const TUMBLR_PAGE = 'tumblr_page';
@@ -37,6 +38,7 @@ class SiteParam extends \common\db\MyActiveRecord
             self::PHONE => 'Phone',
             self::EMAIL => 'Email',
             self::FACEBOOK_PAGE => 'Facebook page',
+            self::FACEBOOK_CHAT_TITLE => 'Facebook chat title',
             self::INSTAGRAM_PAGE => 'Instagram page',
             self::PINTEREST_PAGE => 'Pinterest page',
             self::TUMBLR_PAGE => 'Tumblr page',
