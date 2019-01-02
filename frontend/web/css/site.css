@@ -1019,6 +1019,9 @@ i.icon {
 .story-category .long-desc + * {
     margin-top: 1.5rem;
 }
+.story-category .comments {
+    margin-top: 1rem;
+}
 
 /** Breadcrumb */
 .breadcrumb + * {
