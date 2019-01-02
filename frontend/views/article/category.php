@@ -23,7 +23,8 @@ $imageSize = '198x132';
             if ($category->introduction) {
                 ?>
                 <div class="long-desc">
-                    <div class="expandable-content expandable">
+                    <!--<div class="expandable-content expandable">-->
+                    <div>
                         <div class="paragraph">
                             <?= Util::embedAdvisoryFromToContent($this, $category->introduction); ?>
                         </div>
@@ -52,6 +53,9 @@ $imageSize = '198x132';
                 <?php
             }
             ?>
+            <div class="comments">
+                <?= $this->render('//layouts/fbComment') ?>
+            </div>
         </div>
     </section>
 </div>
