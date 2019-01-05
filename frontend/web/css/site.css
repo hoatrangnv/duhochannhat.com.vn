@@ -981,7 +981,7 @@ i.icon {
 .aside-story-list ul li a:hover {
     color: #0000aa;
 }
-.story-category > :not(:first-child) {
+.story-category > .body > :not(:first-child) {
     margin-top: 1.5rem;
 }
 .story-category .long-desc {
