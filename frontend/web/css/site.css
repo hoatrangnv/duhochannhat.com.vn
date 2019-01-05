@@ -981,7 +981,7 @@ i.icon {
 .aside-story-list ul li a:hover {
     color: #0000aa;
 }
-.story-category .shares + * {
+.story-category > :not(:first-child) {
     margin-top: 1.5rem;
 }
 .story-category .long-desc {
@@ -1015,12 +1015,6 @@ i.icon {
 }
 .story-category .long-desc .expand-button:hover {
     text-decoration: underline;
-}
-.story-category .long-desc + * {
-    margin-top: 1.5rem;
-}
-.story-category .comments {
-    margin-top: 1rem;
 }
 
 /** Breadcrumb */
