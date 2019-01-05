@@ -33,6 +33,9 @@ $imageSize = '198x132';
                 <?php
             }
             ?>
+            <div class="comments">
+                <?= $this->render('//layouts/fbComment') ?>
+            </div>
             <div class="thumbnail-story-list aspect-ratio __3x2">
                 <?php
                 if (count($models) > 0) {
@@ -53,9 +56,6 @@ $imageSize = '198x132';
                 <?php
             }
             ?>
-            <div class="comments">
-                <?= $this->render('//layouts/fbComment') ?>
-            </div>
         </div>
     </section>
 </div>
