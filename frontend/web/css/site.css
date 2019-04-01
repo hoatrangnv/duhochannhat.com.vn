@@ -919,6 +919,34 @@ i.icon {
     margin-top: 1.5rem;
 }
 
+/* .inline-related-stories */
+.inline-related-stories {
+    background: #dae6ee;
+    padding: 1.5em;
+}
+.paragraph ul.inline-related-stories {
+    padding: 1.5em;
+}
+.inline-related-stories li {
+    list-style: none;
+}
+.inline-related-stories li:not(:first-child) {
+    margin-top: 0.5em;
+}
+.inline-related-stories li:before {
+    content: "✔︎ ";
+    color: #E88F1B;
+    font-weight: bold;
+}
+.inline-related-stories li a {
+    color: #06a;
+    font-weight: bold;
+}
+.inline-related-stories li a:hover {
+    border-bottom-color: #E88F1B;
+    color: #E88F1B;
+}
+
 /** .aside-featured-stories */
 .aside-featured-stories ul li a .name {
     font-size: 0.95em;

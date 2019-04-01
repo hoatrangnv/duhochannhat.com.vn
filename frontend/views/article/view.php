@@ -40,19 +40,6 @@ $this->params['breadcrumbs'][] = $model->name;
         </div>
         <?php
         switch ($modelType) {
-            case ArticleCategory::TYPE_NEWS:
-                /*
-                ?>
-                <div class="avatar">
-                    <div class="image aspect-ratio __3x2">
-                        <span>
-                            <?= $model->avatarImg() ?>
-                        </span>
-                    </div>
-                </div>
-                <?php
-                */
-                break;
             case ArticleCategory::TYPE_VIDEO:
                 ?>
                 <div class="video-container">
@@ -67,7 +54,7 @@ $this->params['breadcrumbs'][] = $model->name;
         }
         ?>
         <div class="content paragraph">
-            <?= Util::embedAdvisoryFormToContent($this, $model->content); ?>
+            <?= Util::embedAdvisoryFormToContent($this, $model->content, $model); ?>
         </div>
         <?php
         if (count($model->tags) > 0) {

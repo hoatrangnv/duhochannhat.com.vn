@@ -9,11 +9,12 @@
 namespace frontend\models;
 
 
+use common\models\Article;
 use yii\web\View;
 
 class Util
 {
-    public static function embedAdvisoryFormToContent(View $view, $content) {
+    public static function embedAdvisoryFormToContent(View $view, $content, Article $article = null) {
 
         $preg_open = "[[";
         $preg_close = "]]";
@@ -24,7 +25,7 @@ class Util
             $preg_pattern_template
         );
 
-        $preg_callback = function ($matches) use ($view) {
+        $preg_callback = function ($matches) use ($view, $article) {
             switch (trim($matches[1])) {
                 case 'ADVISORY_FORM_ALL':
                     return $view->render('//contact/_form');
@@ -32,6 +33,10 @@ class Util
                     return $view->render('//contact/_form', ['country' => 'Nhật Bản']);
                 case 'ADVISORY_FORM_KOREA':
                     return $view->render('//contact/_form', ['country' => 'Hàn Quốc']);
+                case 'ARTICLE_RELATED':
+                    if ($article !== null) {
+                        return $view->render('//article/_related', ['article' => $article]);
+                    }
             }
 
             return $matches[0];
