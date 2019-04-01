@@ -7,12 +7,12 @@
  */
 
 /**
- * @var $article \frontend\models\Article
+ * @var $relatedArticles \frontend\models\Article[]
  */
 ?>
 <ul class="inline-related-stories">
     <?php
-    foreach ($article->relatedArticles as $article) {
+    foreach ($relatedArticles as $article) {
         ?>
         <li>
             <?= $article->viewAnchor() ?>
