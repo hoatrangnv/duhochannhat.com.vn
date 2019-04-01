@@ -15,7 +15,10 @@
     foreach ($relatedArticles as $article) {
         ?>
         <li>
-            <?= $article->viewAnchor() ?>
+            <div class="tick"></div>
+            <div class="text">
+                <?= $article->viewAnchor() ?>
+            </div>
         </li>
         <?php
     }

@@ -923,20 +923,31 @@ i.icon {
 .inline-related-stories {
     background: #e0eef6;
     padding: 1.5em;
+    font-size: 0.95em;
 }
 .paragraph ul.inline-related-stories {
     padding: 1.5em;
 }
 .inline-related-stories li {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 .inline-related-stories li:not(:first-child) {
-    margin-top: 0.5em;
+    margin-top: 0.7em;
 }
-.inline-related-stories li:before {
+.inline-related-stories li .tick:before {
     content: "✔︎ ";
     color: #E88F1B;
     font-weight: bold;
+}
+.inline-related-stories li .tick {
+    width: 1em;
+}
+.inline-related-stories li .text {
+    width: calc(100% - 1.5em);
 }
 .inline-related-stories li a {
     color: #06a;
