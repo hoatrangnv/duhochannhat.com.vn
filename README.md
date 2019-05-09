@@ -1,11 +1,3 @@
-### English Sticky: Ứng dụng học Tiếng Anh hiệu quả
-
-[Enbrai: Học từ vựng Tiếng Anh](https://englishsticky.com)
-
-[Từ điển Anh Việt online](https://englishsticky.com/tu-dien-anh-viet/)
-
-[Từ điển Việt Anh online](https://englishsticky.com/tu-dien-viet-anh/)
-
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
@@ -66,3 +58,12 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+English Sticky: Ứng dụng học Tiếng Anh hiệu quả
+-----------------------------------------------
+
+[Enbrai: Học từ vựng Tiếng Anh](https://englishsticky.com)
+
+[Từ điển Anh Việt online](https://englishsticky.com/tu-dien-anh-viet/)
+
+[Từ điển Việt Anh online](https://englishsticky.com/tu-dien-viet-anh/)
